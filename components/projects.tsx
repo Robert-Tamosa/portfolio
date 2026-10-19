@@ -29,6 +29,7 @@ const ProjectCard = ({
           src={image}
           alt={title}
           className="object-cover transition-transform duration-300 group-hover:scale-105"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           fill
         />
       </div>
@@ -78,40 +79,23 @@ const ProjectCard = ({
 const Projects = () => {
   const projects = [
     {
-      title: "E-Commerce Platform",
+      title: "Vehicle Diagnostic and Mechanic Service System",
       description:
-        "A full-featured e-commerce platform with real-time inventory management, payment processing, and admin dashboard.",
-      image: "/placeholder.svg",
-      technologies: ["Next.js", "TypeScript", "Stripe", "Prisma", "PostgreSQL"],
-      liveUrl: "https://ecommerce-demo.com",
-      githubUrl: "https://github.com/username/ecommerce",
+        "An AI-powered vehicle assistance web application that connects vehicle owners with verified mechanics through real-time booking, live location tracking, AI-assisted vehicle diagnostics, repair cost estimation, and digital service documentation..",
+      image: "/FixIT-.png",
+      technologies: [ "Next.js", "React", "TypeScript", "Tailwind CSS", "Prisma", "PostgreSQL", "Neon", "Better Auth", "Groq API",
+                      "Resend", "Leaflet", "OpenStreetMap", "Nominatim", "HTML5 Geolocation", "Serwist", "Vercel",],
+      liveUrl: "https://fix-it-psi-wine.vercel.app",
+      githubUrl: "https://github.com/Robert-Tamosa/FixIT",
     },
     {
-      title: "AI Task Manager",
+      title: "Car Evaluation Model",
       description:
-        "Smart task management app that uses AI to categorize, prioritize, and suggest optimal task scheduling.",
-      image: "/placeholder.svg",
-      technologies: ["React", "Python", "TensorFlow", "FastAPI", "MongoDB"],
-      liveUrl: "https://ai-taskmanager.com",
-      githubUrl: "https://github.com/username/ai-taskmanager",
-    },
-    {
-      title: "Real-time Chat Application",
-      description:
-        "Feature-rich chat application with real-time messaging, file sharing, and video calls.",
-      image: "/placeholder.svg",
-      technologies: ["React", "Socket.io", "WebRTC", "Node.js", "Redis"],
-      liveUrl: "https://chatapp-demo.com",
-      githubUrl: "https://github.com/username/chat-app",
-    },
-    {
-      title: "AI Image Generator",
-      description:
-        "An AI image generator that uses a model to generate images based on a prompt.",
-      image: "/placeholder.svg",
-      technologies: ["React", "Next.js", "Tailwind CSS", "Shadcn UI"],
-      liveUrl: "https://ai-image-generator.com",
-      githubUrl: "https://github.com/username/ai-image-generator",
+        "A machine learning web app that evaluates a car's overall condition based on buying price, maintenance, safety, and comfort features using a Decision Tree classifier.",
+      image: "/CarIQ.png",
+      technologies: ["Python", "Flask", "Scikit-learn", "HTML", "CSS", "JavaScript"],
+      liveUrl: "https://cariq-model.netlify.app/",
+      githubUrl: "https://github.com/Robert-Tamosa/carEvaluationModel",
     },
   ];
 

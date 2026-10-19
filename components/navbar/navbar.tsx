@@ -1,33 +1,44 @@
 import { Button } from "@/components/ui/button";
-import { GithubLogo, XLogo } from "../icons";
+import { GithubLogo, LinkedinLogo, XLogo } from "../icons";
 import { Logo } from "./logo";
 import { NavMenu } from "./nav-menu";
 import { NavigationSheet } from "./navigation-sheet";
+import Link from "next/link";
+import { ThemeToggle } from "../theme-toggle";
 
 const Navbar = () => {
   return (
     <nav className="fixed z-10 top-6 inset-x-4 h-14 bg-background border dark:border-slate-700/70 max-w-screen-md mx-auto rounded-full">
-      <div className="h-full flex items-center justify-between mx-auto px-3">
+      <div className="h-full flex items-center justify-between mx-auto px-3"> 
         <Logo />
 
         {/* Desktop Menu */}
         <NavMenu className="hidden md:block" />
 
         <div className="flex items-center gap-2">
-          <Button
-            variant="outline"
-            className="hidden sm:inline-flex rounded-full shadow-none"
-            size="icon"
-          >
-            <XLogo />
-          </Button>
-          <Button
-            variant="outline"
-            className="rounded-full shadow-none"
-            size="icon"
-          >
-            <GithubLogo className="h-5! w-5!" />
-          </Button>
+
+          <ThemeToggle />
+          
+          <Link href="https://www.linkedin.com/in/robert-tamosa" target="_blank" rel="noopener noreferrer">
+            <Button
+              variant="outline"
+              className="rounded-full shadow-none"
+              size="icon"
+            >
+              <LinkedinLogo className="h-5! w-5!" />
+            </Button>
+          </Link>
+
+          <Link href="https://github.com/Robert-Tamosa" target="_blank" rel="noopener noreferrer">
+            <Button
+              variant="outline"
+              className="rounded-full shadow-none"
+              size="icon"
+            >
+              <GithubLogo className="h-5! w-5!" />
+            </Button>
+          </Link>
+
 
           {/* Mobile Menu */}
           <div className="md:hidden">

@@ -1,0 +1,76 @@
+import { Badge } from "@/components/ui/badge";
+import { buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+import { Download } from "lucide-react";
+import Image from "next/image";
+import { HTMLAttributes } from "react";
+import { GithubLogo } from "./icons";
+
+const GITHUB_URL = "https://github.com/YOUR_USERNAME";
+
+const About = () => {
+  return (
+    <section id="about" className="relative py-20 px-6">
+      <div className="max-w-screen-md mx-auto">
+        <div className="flex flex-col md:flex-row-reverse gap-12">
+          <ProfileImage className="hidden md:block" />
+
+          {/* Content */}
+          <div className="flex-1 md:text-left">
+            <Badge variant="secondary" className="mb-4">
+              About Me
+            </Badge>
+            <ProfileImage className="mt-3 mb-8 block md:hidden" />
+            <h2 className="text-4xl font-bold mb-4 tracking-tight">
+              Building full-stack apps that solve real problems
+            </h2>
+            <p className="text-muted-foreground mb-6 text-justify">
+              I am a full stack developer, creating web apps from front-end to back-end.
+              Logins, online payments and third-party integrations in the database. My
+              FixIT, a Progressive Web App, is a vehicle owner-vehicle repairer link that brings together vehicle owners with repairers.
+              AI-powered mechanic matching helps mechanics in Bogo City to find the right job, while repair shops can find the best mechanic for the job. I&apos;m a fourth year BSIT student, willing to
+              Internships and freelance work. Check out my work below or contact me!
+            </p>
+            <div className="flex flex-wrap gap-4 justify-start">
+              <a
+                href="https://github.com/Robert-Tamosa"
+                target="_blank"
+                rel="noreferrer"
+                className={cn(buttonVariants(), "rounded-full")}
+              >
+                <GithubLogo className="size-4" />
+                View GitHub
+              </a>
+              <a
+                href="/Robert_Tamosa_CV.pdf"
+                download
+                className={cn(buttonVariants({ variant: "outline" }), "rounded-full")}
+              >
+                <Download />
+                Download CV
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const ProfileImage = ({
+  className,
+  ...props
+}: HTMLAttributes<HTMLDivElement>) => (
+  <div className={cn("mt-10 w-48 h-48 md:w-64 md:h-64", className)} {...props}>
+    <div className="relative w-full h-full rounded-2xl overflow-hidden bg-accent">
+      <Image
+        src="/Formal_Picture_!bg.png"
+        alt="Portrait of Robert Tamosa"
+        className="object-cover"
+        fill
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+      />
+    </div>
+  </div>
+);
+export default About;
