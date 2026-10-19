@@ -10,8 +10,11 @@ import { ThemeProvider } from "next-themes";
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 export const metadata: Metadata = {
-  title: "Robert Tamosa",
+  title: "Robert Tamosa — Full Stack Developer",
   description: "Portfolio website of Robert Tamosa",
+  icons: {
+    icon: "/Formal-Picture.jpg",
+  },
 };
 
 export default function RootLayout({
